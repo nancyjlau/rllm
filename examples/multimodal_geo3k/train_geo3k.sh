@@ -4,6 +4,9 @@ set -x
 # Export CUDA environment variables
 export PYTORCH_CUDA_ALLOC_CONF="expandable_segments:False"
 
+# Force SDPA attention (flash-attn not installed)
+export TRANSFORMERS_ATTN_IMPLEMENTATION=sdpa
+
 # Use Qwen3-VL-4B model (confirmed to exist and support multimodal)
 MODEL_PATH=Qwen/Qwen3-VL-4B-Instruct
 
